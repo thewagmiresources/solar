@@ -28,7 +28,6 @@ import {
   Award,
   ArrowRight,
   Sparkles,
-  Lightning,
   Leaf,
   DollarSign,
   Calendar
