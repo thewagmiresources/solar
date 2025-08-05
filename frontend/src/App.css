@@ -1,4 +1,4 @@
-/* Solar Panel Landing Page Styles */
+/* Enhanced Solar Panel Landing Page Styles */
 
 .App-logo {
     height: 40vmin;
@@ -35,14 +35,15 @@
     }
 }
 
-/* Solar Theme Custom Colors */
+/* Enhanced Solar Theme Custom Colors */
 :root {
     --solar-yellow: #FFD700;
-    --eco-green: #00FF00;
-    --electric-blue: #00BFFF;
+    --eco-green: #22c55e;
+    --electric-blue: #0ea5e9;
+    --gradient-blur: blur(24px);
 }
 
-/* Custom utility classes for solar colors */
+/* Enhanced utility classes for solar colors */
 .text-solar-yellow {
     color: #FFD700 !important;
 }
@@ -91,6 +92,72 @@
     background-color: rgb(14 165 233 / 0.9) !important;
 }
 
+/* Enhanced Glassmorphism Effects */
+.glass-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 16px 64px 0 rgba(31, 38, 135, 0.47);
+    transform: translateY(-4px);
+}
+
+.glass-card-dark {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.glass-card-dark:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 16px 64px 0 rgba(0, 0, 0, 0.4);
+}
+
+.glass-card-premium {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 16px 64px 0 rgba(255, 215, 0, 0.2);
+}
+
+/* Enhanced Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes float-delayed {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+    animation: float-delayed 6s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+/* Enhanced gradient effects */
 .from-solar-yellow\/10 {
     --tw-gradient-from: rgb(255 215 0 / 0.1) var(--tw-gradient-from-position);
     --tw-gradient-to: rgb(255 215 0 / 0) var(--tw-gradient-to-position);
@@ -127,7 +194,7 @@
     --tw-gradient-to: #22c55e var(--tw-gradient-to-position);
 }
 
-/* Custom animations and transitions */
+/* Enhanced transitions and effects */
 .transition-all {
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -140,74 +207,141 @@
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-/* Focus states for better accessibility */
-.focus\:border-solar-yellow:focus {
-    border-color: #FFD700 !important;
+.hover\:scale-110:hover {
+    --tw-scale-x: 1.1;
+    --tw-scale-y: 1.1;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-/* Custom button hover effects */
+.hover\:-translate-y-1:hover {
+    --tw-translate-y: -0.25rem;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:-translate-y-2:hover {
+    --tw-translate-y: -0.5rem;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:-translate-y-4:hover {
+    --tw-translate-y: -1rem;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:-translate-y-6:hover {
+    --tw-translate-y: -1.5rem;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:rotate-12:hover {
+    --tw-rotate: 12deg;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+/* Enhanced focus states for better accessibility */
+.focus\:border-solar-yellow:focus {
+    border-color: #FFD700 !important;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+}
+
+/* Enhanced shadow utilities */
+.shadow-3xl {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+}
+
+.hover\:shadow-3xl:hover {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Enhanced button hover effects */
 .btn-solar:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.4);
 }
 
 .btn-eco:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(34, 197, 94, 0.4);
 }
 
 .btn-electric:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(14, 165, 233, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(14, 165, 233, 0.4);
 }
 
-/* Smooth scroll behavior */
+/* Enhanced smooth scroll behavior */
 html {
     scroll-behavior: smooth;
 }
 
-/* Custom loading animation */
+/* Enhanced loading animation */
 @keyframes solar-pulse {
     0%, 100% {
         opacity: 1;
+        transform: scale(1);
     }
     50% {
-        opacity: 0.7;
+        opacity: 0.8;
+        transform: scale(1.05);
     }
 }
 
 .solar-pulse {
-    animation: solar-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation: solar-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Responsive font sizes */
+/* Enhanced responsive font sizes */
 @media (max-width: 640px) {
     .text-4xl {
         font-size: 2.5rem;
         line-height: 1.1;
     }
     
+    .text-5xl {
+        font-size: 3rem;
+        line-height: 1;
+    }
+    
     .text-6xl {
         font-size: 3.5rem;
         line-height: 1;
     }
+    
+    .text-7xl {
+        font-size: 4rem;
+        line-height: 1;
+    }
 }
 
-/* Card hover effects */
+/* Enhanced card hover effects */
 .card-hover:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(-12px);
+    box-shadow: 0 32px 64px rgba(0, 0, 0, 0.15);
 }
 
-/* Gradient text effects */
+/* Enhanced gradient text effects */
 .gradient-text {
-    background: linear-gradient(135deg, #FFD700, #22c55e);
+    background: linear-gradient(135deg, #FFD700, #22c55e, #0ea5e9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease infinite;
 }
 
-/* Custom border animations */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Enhanced border animations */
 .border-animate {
     position: relative;
     overflow: hidden;
@@ -219,9 +353,9 @@ html {
     top: 0;
     left: -100%;
     width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #FFD700, transparent);
-    animation: border-slide 3s infinite;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #FFD700, #22c55e, #0ea5e9, transparent);
+    animation: border-slide 4s infinite;
 }
 
 @keyframes border-slide {
@@ -231,4 +365,112 @@ html {
     100% {
         left: 100%;
     }
+}
+
+/* Enhanced backdrop blur effects */
+.backdrop-blur-md {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.backdrop-blur-lg {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.backdrop-blur-xl {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+}
+
+/* Enhanced text stroke effects */
+.text-stroke {
+    -webkit-text-stroke: 2px #FFD700;
+    text-stroke: 2px #FFD700;
+}
+
+/* Enhanced neon glow effects */
+.neon-glow {
+    text-shadow: 
+        0 0 5px #FFD700,
+        0 0 10px #FFD700,
+        0 0 15px #FFD700,
+        0 0 20px #FFD700;
+}
+
+.neon-glow-green {
+    text-shadow: 
+        0 0 5px #22c55e,
+        0 0 10px #22c55e,
+        0 0 15px #22c55e,
+        0 0 20px #22c55e;
+}
+
+.neon-glow-blue {
+    text-shadow: 
+        0 0 5px #0ea5e9,
+        0 0 10px #0ea5e9,
+        0 0 15px #0ea5e9,
+        0 0 20px #0ea5e9;
+}
+
+/* Enhanced particle effects */
+@keyframes particle-float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-100px) rotate(180deg);
+        opacity: 0.5;
+    }
+}
+
+.particle-effect {
+    animation: particle-float 8s ease-in-out infinite;
+}
+
+/* Enhanced morphing shapes */
+@keyframes morph {
+    0%, 100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+}
+
+.morph-shape {
+    animation: morph 8s ease-in-out infinite;
+}
+
+/* Enhanced custom scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #FFD700, #22c55e, #0ea5e9);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #0ea5e9, #22c55e, #FFD700);
+}
+
+/* Enhanced selection colors */
+::selection {
+    background-color: #FFD700;
+    color: #000;
+}
+
+::-moz-selection {
+    background-color: #FFD700;
+    color: #000;
 }
