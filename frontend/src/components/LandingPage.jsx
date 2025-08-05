@@ -114,7 +114,7 @@ const LandingPage = () => {
             <div className="space-y-10 z-10">
               <div className="space-y-6">
                 <Badge className="bg-gradient-to-r from-solar-yellow/20 to-eco-green/20 text-gray-800 border-none px-4 py-2 text-sm font-semibold">
-                  <Lightning className="h-4 w-4 mr-2" />
+                  <Zap className="h-4 w-4 mr-2" />
                   JIMAT HINGGA 70% BIL ELEKTRIK
                 </Badge>
                 
