@@ -1,3 +1,5 @@
+/* Solar Panel Landing Page Styles */
+
 .App-logo {
     height: 40vmin;
     pointer-events: none;
@@ -30,5 +32,203 @@
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+/* Solar Theme Custom Colors */
+:root {
+    --solar-yellow: #FFD700;
+    --eco-green: #00FF00;
+    --electric-blue: #00BFFF;
+}
+
+/* Custom utility classes for solar colors */
+.text-solar-yellow {
+    color: #FFD700 !important;
+}
+
+.text-eco-green {
+    color: #22c55e !important;
+}
+
+.text-electric-blue {
+    color: #0ea5e9 !important;
+}
+
+.bg-solar-yellow {
+    background-color: #FFD700 !important;
+}
+
+.bg-eco-green {
+    background-color: #22c55e !important;
+}
+
+.bg-electric-blue {
+    background-color: #0ea5e9 !important;
+}
+
+.border-solar-yellow {
+    border-color: #FFD700 !important;
+}
+
+.border-eco-green {
+    border-color: #22c55e !important;
+}
+
+.border-electric-blue {
+    border-color: #0ea5e9 !important;
+}
+
+.hover\:bg-solar-yellow\/90:hover {
+    background-color: rgb(255 215 0 / 0.9) !important;
+}
+
+.hover\:bg-eco-green\/90:hover {
+    background-color: rgb(34 197 94 / 0.9) !important;
+}
+
+.hover\:bg-electric-blue\/90:hover {
+    background-color: rgb(14 165 233 / 0.9) !important;
+}
+
+.from-solar-yellow\/10 {
+    --tw-gradient-from: rgb(255 215 0 / 0.1) var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(255 215 0 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-eco-green\/10 {
+    --tw-gradient-to: rgb(34 197 94 / 0.1) var(--tw-gradient-to-position);
+}
+
+.from-solar-yellow\/20 {
+    --tw-gradient-from: rgb(255 215 0 / 0.2) var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(255 215 0 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-eco-green\/20 {
+    --tw-gradient-to: rgb(34 197 94 / 0.2) var(--tw-gradient-to-position);
+}
+
+.from-electric-blue\/10 {
+    --tw-gradient-from: rgb(14 165 233 / 0.1) var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(14 165 233 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-solar-yellow {
+    --tw-gradient-from: #FFD700 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(255 215 0 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-eco-green {
+    --tw-gradient-to: #22c55e var(--tw-gradient-to-position);
+}
+
+/* Custom animations and transitions */
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+
+.hover\:scale-105:hover {
+    --tw-scale-x: 1.05;
+    --tw-scale-y: 1.05;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+/* Focus states for better accessibility */
+.focus\:border-solar-yellow:focus {
+    border-color: #FFD700 !important;
+}
+
+/* Custom button hover effects */
+.btn-solar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+}
+
+.btn-eco:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
+}
+
+.btn-electric:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(14, 165, 233, 0.3);
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom loading animation */
+@keyframes solar-pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.solar-pulse {
+    animation: solar-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Responsive font sizes */
+@media (max-width: 640px) {
+    .text-4xl {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+    
+    .text-6xl {
+        font-size: 3.5rem;
+        line-height: 1;
+    }
+}
+
+/* Card hover effects */
+.card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient text effects */
+.gradient-text {
+    background: linear-gradient(135deg, #FFD700, #22c55e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Custom border animations */
+.border-animate {
+    position: relative;
+    overflow: hidden;
+}
+
+.border-animate::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #FFD700, transparent);
+    animation: border-slide 3s infinite;
+}
+
+@keyframes border-slide {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
     }
 }
