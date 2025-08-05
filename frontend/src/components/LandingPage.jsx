@@ -30,7 +30,19 @@ import {
   Sparkles,
   Leaf,
   DollarSign,
-  Calendar
+  Calendar,
+  ThumbsUp,
+  Heart,
+  AlertTriangle,
+  Timer,
+  CreditCard,
+  Percent,
+  PiggyBank,
+  Coins,
+  ShieldCheck,
+  BadgeCheck,
+  Crown,
+  Fire
 } from 'lucide-react';
 import { packages, testimonials, faqs, workingSteps, whyChoosePoints } from '../mock';
 import { useToast } from '../hooks/use-toast';
@@ -76,134 +88,195 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+    <div className="min-h-screen bg-white">
+      {/* Floating Announcement Bar */}
+      <div className="bg-gradient-to-r from-red-600 to-red-700 text-white text-center py-3 px-4 relative overflow-hidden">
+        <div className="animate-pulse">
+          <span className="font-bold">🔥 TAWARAN TERHAD! </span>
+          <span>Jimat sehingga RM15,000 dengan rebat kerajaan sebelum 31 Disember 2024!</span>
+        </div>
+      </div>
+
       {/* Header */}
-      <header className="backdrop-blur-md bg-white/80 border-b border-white/20 sticky top-0 z-50 shadow-lg">
-        <div className="container mx-auto px-4 py-6">
+      <header className="backdrop-blur-md bg-white/95 border-b border-gray-100 sticky top-0 z-50 shadow-lg">
+        <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3 group cursor-pointer">
               <div className="relative">
                 <Sun className="h-10 w-10 text-solar-yellow transform group-hover:rotate-180 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-solar-yellow/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
               </div>
-              <h1 className="text-3xl font-black text-gray-900 tracking-tight">Ai Brique</h1>
-              <Badge className="bg-eco-green/10 text-eco-green border-eco-green/20 hidden sm:block">
-                Terpercaya #1
-              </Badge>
+              <div>
+                <h1 className="text-2xl font-black text-gray-900 tracking-tight">Ai Brique</h1>
+                <p className="text-xs text-gray-600">Solar Terpercaya Malaysia</p>
+              </div>
+              <div className="flex space-x-2">
+                <Badge className="bg-green-500 text-white">⭐ 5.0 Rating</Badge>
+                <Badge className="bg-blue-500 text-white">100+ Projek</Badge>
+              </div>
             </div>
-            <Button className="bg-gradient-to-r from-solar-yellow to-amber-400 hover:from-amber-400 hover:to-solar-yellow text-black font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-              <Phone className="h-5 w-5 mr-2" />
-              Hubungi Kami
-              <Sparkles className="h-4 w-4 ml-2" />
-            </Button>
+            <div className="flex items-center space-x-4">
+              <div className="text-right hidden md:block">
+                <p className="text-sm font-semibold text-gray-900">Hubungi PERCUMA</p>
+                <p className="text-lg font-bold text-electric-blue">+60 3-1234 5678</p>
+              </div>
+              <Button className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 animate-pulse">
+                <Phone className="h-5 w-5 mr-2" />
+                Call SEKARANG
+              </Button>
+            </div>
           </div>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen bg-gradient-to-br from-blue-900/10 via-purple-500/5 to-solar-yellow/10 overflow-hidden">
-        {/* Animated Background Elements */}
+      {/* Hero Section - Customer Focused */}
+      <section className="relative min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
+        {/* Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-solar-yellow/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-eco-green/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-electric-blue/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-green-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
 
-        <div className="relative container mx-auto px-4 py-20">
-          <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
-            <div className="space-y-10 z-10">
+        <div className="relative container mx-auto px-4 py-12">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              {/* Urgent Alert */}
+              <div className="bg-gradient-to-r from-red-500/10 to-orange-500/10 border-l-4 border-red-500 p-4 rounded-lg">
+                <div className="flex items-center">
+                  <AlertTriangle className="h-6 w-6 text-red-500 mr-3" />
+                  <div>
+                    <p className="font-bold text-red-700">AMARAN: Harga elektrik naik 25% tahun ini!</p>
+                    <p className="text-sm text-red-600">Jangan biarkan bil elektrik anda terus membengkak!</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Main Headline - Emotional */}
               <div className="space-y-6">
-                <Badge className="bg-gradient-to-r from-solar-yellow/20 to-eco-green/20 text-gray-800 border-none px-4 py-2 text-sm font-semibold">
-                  <Zap className="h-4 w-4 mr-2" />
-                  JIMAT HINGGA 70% BIL ELEKTRIK
-                </Badge>
-                
-                <h1 className="text-5xl lg:text-7xl font-black text-gray-900 leading-none tracking-tight">
-                  Buat Apa Nak
+                <h1 className="text-4xl lg:text-7xl font-black text-gray-900 leading-none">
+                  <span className="text-red-600">STOP</span> Membazir
                   <br />
-                  <span className="bg-gradient-to-r from-solar-yellow via-amber-500 to-orange-500 bg-clip-text text-transparent animate-pulse">
-                    Membazir
+                  <span className="bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent">
+                    RM2,000-5,000
                   </span>
                   <br />
-                  <span className="text-4xl lg:text-5xl text-gray-700">
-                    Ribuan Ringgit?
-                  </span>
+                  <span className="text-3xl lg:text-5xl text-gray-700">Setiap Tahun!</span>
                 </h1>
                 
-                <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed font-medium">
-                  Jangan biarkan kenaikan tarif TNB membebankan keluarga anda – pasang panel solar 
-                  <span className="font-bold text-eco-green"> terbukti jimat hingga 70%</span> dalam 
-                  <span className="font-bold text-solar-yellow"> 14 hari sahaja</span>, 
-                  dengan jaminan <span className="font-bold text-electric-blue">25 tahun</span>.
-                </p>
+                <div className="bg-yellow-100 border-l-4 border-yellow-500 p-6 rounded-lg">
+                  <p className="text-xl lg:text-2xl text-gray-800 font-semibold leading-relaxed">
+                    Keluarga Malaysia telah menjimatkan <span className="font-black text-green-600">RM50,000+</span> 
+                    dengan panel solar kami. Kini giliran anda untuk menikmati 
+                    <span className="font-black text-blue-600"> elektrik PERCUMA</span> selama 25+ tahun!
+                  </p>
+                </div>
+              </div>
+
+              {/* Money-Back Guarantee */}
+              <div className="bg-gradient-to-r from-green-50 to-blue-50 border-2 border-green-200 p-6 rounded-xl">
+                <div className="flex items-center space-x-4">
+                  <ShieldCheck className="h-16 w-16 text-green-500" />
+                  <div>
+                    <h3 className="text-xl font-bold text-green-700">100% JAMINAN WANG KEMBALI</h3>
+                    <p className="text-green-600">Jika anda tidak jimat dalam 12 bulan, kami pulangkan wang sepenuhnya!</p>
+                  </div>
+                </div>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-6">
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-solar-yellow to-amber-400 hover:from-amber-400 hover:to-solar-yellow text-black font-black text-xl px-10 py-6 rounded-2xl shadow-2xl hover:shadow-3xl hover:-translate-y-2 transition-all duration-300 border-2 border-solar-yellow/20"
+                  className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white font-black text-xl px-10 py-6 rounded-2xl shadow-2xl hover:shadow-3xl hover:-translate-y-2 transition-all duration-300 animate-bounce"
                 >
-                  <Zap className="h-6 w-6 mr-3" />
-                  Dapatkan Sebut Harga PERCUMA
-                  <ArrowRight className="h-5 w-5 ml-3" />
+                  <Gift className="h-6 w-6 mr-3" />
+                  DAPATKAN REBAT RM15,000 SEKARANG!
+                  <ArrowRight className="h-6 w-6 ml-3" />
                 </Button>
                 
                 <Button 
                   size="lg" 
-                  className="bg-white/80 backdrop-blur-md border-2 border-electric-blue/30 text-electric-blue hover:bg-electric-blue hover:text-white font-bold text-lg px-8 py-6 rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                  className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-bold text-lg px-8 py-6 rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
                 >
-                  <Phone className="h-5 w-5 mr-3" />
-                  Hubungi Sekarang
+                  <Calculator className="h-5 w-5 mr-3" />
+                  Kalkulator Jimat Percuma
                 </Button>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8">
-                <div className="glass-card p-6 text-center group">
-                  <Clock className="h-8 w-8 text-solar-yellow mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
-                  <p className="font-bold text-gray-900">Pemasangan</p>
-                  <p className="text-solar-yellow font-black text-lg">14 Hari</p>
+              {/* Trust Indicators */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div className="text-center p-4 bg-white/80 rounded-xl shadow-lg">
+                  <Crown className="h-8 w-8 text-yellow-500 mx-auto mb-2" />
+                  <p className="font-bold text-gray-900">100%</p>
+                  <p className="text-sm text-gray-600">Satisfied</p>
                 </div>
-                <div className="glass-card p-6 text-center group">
-                  <Shield className="h-8 w-8 text-electric-blue mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
-                  <p className="font-bold text-gray-900">Jaminan</p>
-                  <p className="text-electric-blue font-black text-lg">25 Tahun</p>
+                <div className="text-center p-4 bg-white/80 rounded-xl shadow-lg">
+                  <Timer className="h-8 w-8 text-blue-500 mx-auto mb-2" />
+                  <p className="font-bold text-gray-900">14 Hari</p>
+                  <p className="text-sm text-gray-600">Pemasangan</p>
                 </div>
-                <div className="glass-card p-6 text-center group">
-                  <Users className="h-8 w-8 text-eco-green mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
-                  <p className="font-bold text-gray-900">Pemasangan</p>
-                  <p className="text-eco-green font-black text-lg">100+ Berjaya</p>
+                <div className="text-center p-4 bg-white/80 rounded-xl shadow-lg">
+                  <Shield className="h-8 w-8 text-green-500 mx-auto mb-2" />
+                  <p className="font-bold text-gray-900">25 Tahun</p>
+                  <p className="text-sm text-gray-600">Jaminan</p>
+                </div>
+                <div className="text-center p-4 bg-white/80 rounded-xl shadow-lg">
+                  <BadgeCheck className="h-8 w-8 text-purple-500 mx-auto mb-2" />
+                  <p className="font-bold text-gray-900">Lesen</p>
+                  <p className="text-sm text-gray-600">SEDA</p>
                 </div>
               </div>
             </div>
 
-            <div className="relative z-10">
+            {/* Right Side - Social Proof */}
+            <div className="space-y-6">
+              {/* Main Image with Overlay */}
               <div className="relative group">
                 <img 
                   src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&h=500&fit=crop" 
                   alt="Solar Panel Installation"
                   className="rounded-3xl shadow-2xl w-full transform group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-3xl"></div>
                 
-                {/* Floating Statistics */}
-                <div className="absolute -top-8 -left-8 glass-card p-6 animate-float">
-                  <div className="flex items-center space-x-3">
-                    <DollarSign className="h-8 w-8 text-eco-green" />
+                {/* Customer Testimonial Overlay */}
+                <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm p-6 rounded-2xl">
+                  <div className="flex items-center space-x-4 mb-3">
+                    <img 
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" 
+                      alt="Customer"
+                      className="w-12 h-12 rounded-full border-2 border-green-400"
+                    />
                     <div>
-                      <p className="text-2xl font-black text-eco-green">70%</p>
-                      <p className="text-sm font-semibold text-gray-700">Jimat Bil</p>
+                      <p className="font-bold text-gray-900">Ahmad Razak</p>
+                      <p className="text-sm text-gray-600">Shah Alam</p>
                     </div>
+                    <div className="flex space-x-1 ml-auto">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-gray-800 font-medium">"Alhamdulillah! Dah 2 tahun pasang solar, bil elektrik dari RM600 turun jadi RM80 sahaja. Balik modal dalam 4 tahun!"</p>
+                  <div className="mt-3 text-center">
+                    <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-bold mr-2">Sebelum: RM600</span>
+                    <ArrowRight className="inline h-4 w-4 mx-2" />
+                    <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">Sekarang: RM80</span>
                   </div>
                 </div>
-                
-                <div className="absolute -bottom-8 -right-8 glass-card p-6 animate-float-delayed">
-                  <div className="flex items-center space-x-3">
-                    <Leaf className="h-8 w-8 text-eco-green" />
-                    <div>
-                      <p className="text-2xl font-black text-eco-green">100+</p>
-                      <p className="text-sm font-semibold text-gray-700">Projek</p>
-                    </div>
-                  </div>
+              </div>
+
+              {/* Quick Stats */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-gradient-to-br from-green-500 to-green-600 p-6 rounded-2xl text-white">
+                  <PiggyBank className="h-12 w-12 mb-3" />
+                  <p className="text-3xl font-black">RM50,000+</p>
+                  <p className="text-green-100">Purata Jimat 25 Tahun</p>
+                </div>
+                <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-6 rounded-2xl text-white">
+                  <Percent className="h-12 w-12 mb-3" />
+                  <p className="text-3xl font-black">85%</p>
+                  <p className="text-blue-100">Kurang Bil Elektrik</p>
                 </div>
               </div>
             </div>
@@ -211,173 +284,277 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Why Solar Now Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-50 via-white to-blue-50"></div>
-        <div className="relative container mx-auto px-4">
-          <div className="text-center mb-20">
-            <Badge className="bg-gradient-to-r from-red-500/10 to-orange-500/10 text-red-600 border-red-200 mb-6 px-6 py-2 text-lg font-bold">
-              <TrendingUp className="h-5 w-5 mr-2" />
-              JANGAN TUNGGU LAGI!
-            </Badge>
-            <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
-              Kenapa Tidak Tunggu Lagi?
+      {/* Urgency Section */}
+      <section className="py-16 bg-gradient-to-r from-red-600 to-red-700 text-white relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-yellow-400/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-80 h-80 bg-orange-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+        
+        <div className="relative container mx-auto px-4 text-center">
+          <div className="max-w-4xl mx-auto space-y-6">
+            <h2 className="text-4xl lg:text-6xl font-black">
+              <Fire className="inline h-12 w-12 mr-4 text-yellow-400" />
+              TAWARAN TERBATAS!
             </h2>
-            <p className="text-2xl text-gray-600 font-semibold">
-              Pasang Solar <span className="text-eco-green font-black">Sebelum Terlambat!</span>
-            </p>
+            <p className="text-2xl font-bold">Hanya 50 keluarga pertama yang layak untuk rebat RM15,000!</p>
+            
+            <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-8">
+              <div className="grid md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <p className="text-5xl font-black text-yellow-400">27</p>
+                  <p className="text-xl">Keluarga Tersisa</p>
+                </div>
+                <div>
+                  <p className="text-5xl font-black text-yellow-400">15</p>
+                  <p className="text-xl">Hari Lagi</p>
+                </div>
+                <div>
+                  <p className="text-5xl font-black text-yellow-400">RM15K</p>
+                  <p className="text-xl">Rebat Kerajaan</p>
+                </div>
+              </div>
+            </div>
+
+            <Button 
+              size="lg" 
+              className="bg-yellow-400 hover:bg-yellow-300 text-red-700 font-black text-2xl px-12 py-6 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 animate-pulse"
+            >
+              <Zap className="h-8 w-8 mr-4" />
+              CLAIM REBAT SEKARANG!
+              <ArrowRight className="h-8 w-8 ml-4" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Customer Success Stories */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-green-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-6xl font-black text-gray-900 mb-6">
+              Apa Kata <span className="text-green-600">Pelanggan Setia</span> Kami?
+            </h2>
+            <p className="text-2xl text-gray-600 font-semibold">100+ keluarga telah menjimatkan lebih RM2 JUTA!</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-10">
-            {whyChoosePoints.map((point, index) => (
-              <Card key={point.id} className="glass-card border-none hover:shadow-3xl hover:-translate-y-4 transition-all duration-500 group overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-solar-yellow/20 to-eco-green/20 rounded-full blur-2xl transform translate-x-16 -translate-y-16"></div>
-                <CardHeader className="text-center pb-6 relative z-10">
-                  <div className="mx-auto w-20 h-20 bg-gradient-to-br from-solar-yellow/20 to-eco-green/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
-                    {getIcon(point.icon)}
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={testimonial.id} className="relative overflow-hidden border-none shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-4 bg-white">
+                <div className="absolute top-0 right-0 bg-green-500 text-white px-4 py-2 rounded-bl-2xl">
+                  <p className="font-bold">VERIFIED ✓</p>
+                </div>
+                
+                <CardHeader className="pb-6">
+                  <div className="flex items-center space-x-4 mb-4">
+                    <img 
+                      src={testimonial.image} 
+                      alt={testimonial.name}
+                      className="w-16 h-16 rounded-full object-cover border-4 border-green-400"
+                    />
+                    <div>
+                      <h4 className="font-bold text-lg text-gray-900">{testimonial.name}</h4>
+                      <p className="text-gray-600 flex items-center">
+                        <MapPin className="h-4 w-4 mr-1" />
+                        {testimonial.location}
+                      </p>
+                    </div>
                   </div>
-                  <CardTitle className="text-2xl font-bold text-gray-900 mb-4">{point.title}</CardTitle>
+                  
+                  <div className="flex space-x-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-6 w-6 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
                 </CardHeader>
+                
                 <CardContent>
-                  <p className="text-gray-600 text-center leading-relaxed text-lg">{point.description}</p>
-                  <div className="mt-6 text-center">
-                    <Badge className={`px-4 py-1 font-bold ${
-                      index === 0 ? 'bg-red-500/10 text-red-600 border-red-200' :
-                      index === 1 ? 'bg-eco-green/10 text-eco-green border-eco-green/20' :
-                      'bg-electric-blue/10 text-electric-blue border-electric-blue/20'
-                    }`}>
-                      {index === 0 ? 'URGENT' : index === 1 ? 'PROFITABLE' : 'LIMITED TIME'}
-                    </Badge>
+                  <p className="text-gray-700 leading-relaxed mb-6 font-medium">
+                    "{testimonial.comment}"
+                  </p>
+                  
+                  {/* Savings Highlight */}
+                  <div className="bg-gradient-to-r from-green-100 to-blue-100 p-4 rounded-xl">
+                    <p className="text-center font-bold text-gray-900 mb-2">Penjimatan Bulanan:</p>
+                    <div className="flex items-center justify-center space-x-3">
+                      <span className="bg-red-200 text-red-800 px-3 py-2 rounded-full font-bold text-lg line-through">
+                        {testimonial.beforeBill}
+                      </span>
+                      <ArrowRight className="h-5 w-5 text-gray-500" />
+                      <span className="bg-green-200 text-green-800 px-3 py-2 rounded-full font-bold text-lg">
+                        {testimonial.afterBill}
+                      </span>
+                    </div>
+                    <p className="text-center text-green-700 font-bold mt-2">
+                      Jimat: RM{parseInt(testimonial.beforeBill.replace('RM', '')) - parseInt(testimonial.afterBill.replace('RM', ''))}/bulan
+                    </p>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* How It Works Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-64 h-64 bg-solar-yellow/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-80 h-80 bg-eco-green/10 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="relative container mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-6xl font-black text-white mb-6">
-              Bagaimana <span className="bg-gradient-to-r from-solar-yellow to-amber-400 bg-clip-text text-transparent">Ia Berfungsi?</span>
-            </h2>
-            <p className="text-2xl text-gray-300 font-semibold">Proses mudah dalam 5 langkah sahaja</p>
-          </div>
-
-          <div className="relative max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-5 gap-8">
-              {workingSteps.map((step, index) => (
-                <div key={step.id} className="relative group">
-                  <Card className="glass-card-dark border-white/20 hover:border-solar-yellow/50 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
-                    <CardHeader className="text-center pb-6">
-                      <div className="relative mx-auto w-20 h-20 bg-gradient-to-br from-solar-yellow to-amber-400 rounded-full flex items-center justify-center text-black font-black text-2xl mb-6 shadow-2xl group-hover:shadow-3xl transition-all duration-500">
-                        {step.id}
-                        <div className="absolute inset-0 bg-solar-yellow/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                      </div>
-                      <CardTitle className="text-xl font-bold text-white group-hover:text-solar-yellow transition-colors duration-300">
-                        {step.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-gray-300 text-center text-sm leading-relaxed group-hover:text-white transition-colors duration-300">
-                        {step.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                  
-                  {index < workingSteps.length - 1 && (
-                    <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                      <ArrowRight className="h-8 w-8 text-solar-yellow animate-pulse" />
-                    </div>
-                  )}
-                </div>
-              ))}
+          {/* Trust Badges */}
+          <div className="text-center mt-12">
+            <div className="flex justify-center items-center space-x-8 flex-wrap">
+              <Badge className="bg-green-100 text-green-800 px-6 py-3 text-lg font-bold">
+                <ThumbsUp className="h-5 w-5 mr-2" />
+                98% Customer Satisfaction
+              </Badge>
+              <Badge className="bg-blue-100 text-blue-800 px-6 py-3 text-lg font-bold">
+                <Award className="h-5 w-5 mr-2" />
+                Best Solar Company 2024
+              </Badge>
+              <Badge className="bg-purple-100 text-purple-800 px-6 py-3 text-lg font-bold">
+                <Heart className="h-5 w-5 mr-2" />
+                1000+ Happy Families
+              </Badge>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Packages Section */}
-      <section className="py-24 bg-gradient-to-br from-blue-50 via-white to-purple-50 relative overflow-hidden">
+      {/* Why Choose Us - Benefit Focused */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-6xl font-black text-gray-900 mb-6">
+              Kenapa Pilih <span className="text-blue-600">Ai Brique?</span>
+            </h2>
+            <p className="text-2xl text-gray-600 font-semibold">Kami bukan sekadar pasang panel - kami jaga masa depan keluarga anda!</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center p-8 bg-gradient-to-br from-green-50 to-green-100 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Coins className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">JIMAT MAKSIMUM</h3>
+              <p className="text-gray-700">Kurangkan bil elektrik hingga 90%. Bayar sekali, jimat selamanya!</p>
+              <div className="mt-4 bg-green-200 text-green-800 px-4 py-2 rounded-full font-bold">
+                RM50,000+ Jimat
+              </div>
+            </div>
+
+            <div className="text-center p-8 bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div className="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Timer className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">PEMASANGAN PANTAS</h3>
+              <p className="text-gray-700">Dalam 14 hari, anda dah boleh start jimat. Tiada tunggu berbulan-bulan!</p>
+              <div className="mt-4 bg-blue-200 text-blue-800 px-4 py-2 rounded-full font-bold">
+                Express Install
+              </div>
+            </div>
+
+            <div className="text-center p-8 bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div className="w-20 h-20 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <ShieldCheck className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">JAMINAN TERBAIK</h3>
+              <p className="text-gray-700">25 tahun jaminan + Money back guarantee. Risiko ZERO untuk anda!</p>
+              <div className="mt-4 bg-purple-200 text-purple-800 px-4 py-2 rounded-full font-bold">
+                100% Protected
+              </div>
+            </div>
+
+            <div className="text-center p-8 bg-gradient-to-br from-orange-50 to-orange-100 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div className="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CreditCard className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">BAYAR MUDAH</h3>
+              <p className="text-gray-700">Ansuran bulanan dari RM200. Lebih murah dari bil elektrik anda sekarang!</p>
+              <div className="mt-4 bg-orange-200 text-orange-800 px-4 py-2 rounded-full font-bold">
+                Financing Available
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Package Pricing - Value Focused */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-40 left-10 w-96 h-96 bg-solar-yellow/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-40 right-10 w-96 h-96 bg-eco-green/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 left-20 w-72 h-72 bg-yellow-400/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-green-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
         
         <div className="relative container mx-auto px-4">
-          <div className="text-center mb-20">
-            <Badge className="bg-gradient-to-r from-electric-blue/10 to-purple-500/10 text-electric-blue border-electric-blue/20 mb-6 px-6 py-3 text-lg font-bold">
-              <Award className="h-5 w-5 mr-2" />
-              PAKEJ TERBAIK MALAYSIA
-            </Badge>
-            <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6">
-              Pilih <span className="bg-gradient-to-r from-solar-yellow to-amber-500 bg-clip-text text-transparent">Pakej Terbaik</span>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-6xl font-black text-white mb-6">
+              Pilih Pakej <span className="bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">Terbaik</span>
             </h2>
-            <p className="text-2xl text-gray-600 font-semibold">Pakej lengkap dengan jaminan dan sokongan penuh</p>
+            <p className="text-2xl text-gray-300 font-semibold">Semua pakej include: Pemasangan, Jaminan 25 Tahun & Maintenance!</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {packages.map((pkg, index) => (
               <Card 
                 key={pkg.id} 
                 className={`relative overflow-hidden transition-all duration-500 hover:-translate-y-6 group ${
                   pkg.popular 
-                    ? 'glass-card-premium ring-4 ring-solar-yellow/30 shadow-3xl scale-105' 
-                    : 'glass-card hover:shadow-2xl'
+                    ? 'glass-card-premium ring-4 ring-yellow-400/50 shadow-3xl scale-110' 
+                    : 'glass-card-dark hover:shadow-3xl'
                 }`}
               >
                 {pkg.popular && (
-                  <div className="absolute top-0 left-0 right-0">
-                    <div className="bg-gradient-to-r from-solar-yellow to-amber-400 text-black text-center py-3 font-black text-sm tracking-widest">
-                      ⭐ PALING POPULAR ⭐
-                    </div>
+                  <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-yellow-400 to-green-400 text-black text-center py-3 font-black text-lg">
+                    🏆 PILIHAN TERBAIK - JIMAT RM8,000! 🏆
                   </div>
                 )}
                 
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-electric-blue/20 to-purple-500/20 rounded-full blur-2xl transform translate-x-16 -translate-y-16"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-yellow-400/20 to-green-400/20 rounded-full blur-2xl transform translate-x-16 -translate-y-16"></div>
                 
-                <CardHeader className="text-center pb-8 relative z-10" style={{ paddingTop: pkg.popular ? '4rem' : '2rem' }}>
-                  <CardTitle className="text-3xl font-black text-gray-900 mb-4">{pkg.name}</CardTitle>
+                <CardHeader className="text-center pb-8 relative z-10" style={{ paddingTop: pkg.popular ? '5rem' : '2rem' }}>
+                  <CardTitle className="text-3xl font-black text-white mb-4">{pkg.name}</CardTitle>
+                  
+                  {/* Value Proposition */}
+                  <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-xl p-4 mb-4">
+                    <p className="text-white font-bold">JIMAT HINGGA:</p>
+                    <p className="text-4xl font-black text-green-400">
+                      RM{(parseInt(pkg.power.replace(' kW', '')) * 1200).toLocaleString()}/tahun
+                    </p>
+                  </div>
+
                   <div className="space-y-2">
-                    <div className="text-5xl font-black bg-gradient-to-r from-electric-blue to-purple-600 bg-clip-text text-transparent">
+                    <p className="text-lg text-gray-300 line-through">Harga Biasa: RM{(parseInt(pkg.price.replace('RM', '').replace(',', '')) * 1.2).toLocaleString()}</p>
+                    <div className="text-5xl font-black text-white">
                       {pkg.price}
                     </div>
-                    <p className="text-xl text-gray-600 font-semibold">{pkg.power}</p>
+                    <p className="text-xl text-yellow-400 font-semibold">{pkg.power}</p>
+                    <p className="text-sm text-gray-400">*Termasuk semua kos pemasangan</p>
                   </div>
                 </CardHeader>
                 
                 <CardContent className="space-y-6 relative z-10">
                   <div className="space-y-4">
-                    <div className="flex items-center space-x-3 p-3 bg-eco-green/5 rounded-lg">
-                      <Shield className="h-6 w-6 text-eco-green flex-shrink-0" />
-                      <span className="text-gray-700 font-semibold">Jaminan {pkg.warranty}</span>
+                    <div className="flex items-center space-x-3 p-3 bg-green-500/10 rounded-lg border border-green-400/30">
+                      <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
+                      <span className="text-white font-semibold">Jaminan {pkg.warranty}</span>
                     </div>
-                    <div className="flex items-center space-x-3 p-3 bg-electric-blue/5 rounded-lg">
-                      <Home className="h-6 w-6 text-electric-blue flex-shrink-0" />
-                      <span className="text-gray-700 font-semibold">{pkg.suitableFor}</span>
+                    <div className="flex items-center space-x-3 p-3 bg-blue-500/10 rounded-lg border border-blue-400/30">
+                      <Home className="h-6 w-6 text-blue-400 flex-shrink-0" />
+                      <span className="text-white font-semibold">{pkg.suitableFor}</span>
                     </div>
-                    <div className="flex items-center space-x-3 p-3 bg-solar-yellow/5 rounded-lg">
-                      <Calendar className="h-6 w-6 text-solar-yellow flex-shrink-0" />
-                      <span className="text-gray-700 font-semibold">Pemasangan 14 Hari</span>
+                    <div className="flex items-center space-x-3 p-3 bg-yellow-500/10 rounded-lg border border-yellow-400/30">
+                      <Timer className="h-6 w-6 text-yellow-400 flex-shrink-0" />
+                      <span className="text-white font-semibold">Pemasangan 14 Hari</span>
+                    </div>
+                    <div className="flex items-center space-x-3 p-3 bg-purple-500/10 rounded-lg border border-purple-400/30">
+                      <CreditCard className="h-6 w-6 text-purple-400 flex-shrink-0" />
+                      <span className="text-white font-semibold">Ansuran dari RM{Math.round(parseInt(pkg.price.replace('RM', '').replace(',', '')) / 60)}/bulan</span>
                     </div>
                   </div>
                   
                   <Button 
-                    className={`w-full font-bold py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-1 ${
+                    className={`w-full font-bold py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-1 text-lg ${
                       pkg.popular
-                        ? 'bg-gradient-to-r from-solar-yellow to-amber-400 text-black hover:from-amber-400 hover:to-solar-yellow'
-                        : 'bg-gradient-to-r from-electric-blue to-purple-600 text-white hover:from-purple-600 hover:to-electric-blue'
+                        ? 'bg-gradient-to-r from-yellow-400 to-green-400 text-black hover:from-green-400 hover:to-yellow-400 animate-pulse'
+                        : 'bg-gradient-to-r from-white to-gray-100 text-gray-900 hover:from-gray-100 hover:to-white'
                     }`}
                   >
                     <Sparkles className="h-5 w-5 mr-2" />
-                    Pilih Pakej Ini
+                    {pkg.popular ? 'PILIH SEKARANG - JIMAT RM8K!' : 'Pilih Pakej Ini'}
                   </Button>
                 </CardContent>
               </Card>
@@ -385,120 +562,49 @@ const LandingPage = () => {
           </div>
 
           <div className="text-center mt-16">
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-electric-blue to-purple-600 hover:from-purple-600 hover:to-electric-blue text-white font-black text-xl px-12 py-6 rounded-2xl shadow-2xl hover:shadow-3xl hover:-translate-y-2 transition-all duration-300"
-            >
-              <Gift className="h-6 w-6 mr-3" />
-              Bandingkan & Mohon Tawaran Eksklusif
-              <ArrowRight className="h-5 w-5 ml-3" />
-            </Button>
+            <div className="bg-gradient-to-r from-yellow-400/20 to-green-400/20 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto">
+              <h3 className="text-3xl font-bold text-white mb-4">💰 BONUS UNTUK 20 PELANGGAN PERTAMA!</h3>
+              <ul className="text-white text-lg space-y-2">
+                <li>✅ FREE Smart Monitoring System (Nilai: RM2,000)</li>
+                <li>✅ FREE 5 Tahun Extended Warranty (Nilai: RM3,000)</li>
+                <li>✅ FREE Energy Efficiency Audit (Nilai: RM500)</li>
+              </ul>
+              <Button 
+                size="lg" 
+                className="mt-6 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-black text-xl px-12 py-4 rounded-2xl animate-pulse"
+              >
+                <Gift className="h-6 w-6 mr-3" />
+                CLAIM BONUS SEKARANG!
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-solar-yellow/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-eco-green/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        </div>
-        
-        <div className="relative container mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-6xl font-black text-white mb-6">
-              Apa Kata <span className="bg-gradient-to-r from-eco-green to-emerald-400 bg-clip-text text-transparent">Pelanggan Kami?</span>
+      {/* FAQ - Customer Concerns */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-green-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-6xl font-black text-gray-900 mb-6">
+              Soalan Yang <span className="text-blue-600">Selalu Ditanya</span>
             </h2>
-            <p className="text-2xl text-gray-300 font-semibold">100+ pemasangan berjaya di Malaysia – terbukti!</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={testimonial.id} className="glass-card-dark border-white/20 hover:border-eco-green/50 transition-all duration-500 hover:-translate-y-4 hover:shadow-3xl group overflow-hidden">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-eco-green/20 to-emerald-400/20 rounded-full blur-xl transform translate-x-12 -translate-y-12"></div>
-                
-                <CardHeader className="relative z-10">
-                  <div className="flex items-center space-x-4 mb-6">
-                    <div className="relative">
-                      <img 
-                        src={testimonial.image} 
-                        alt={testimonial.name}
-                        className="w-16 h-16 rounded-full object-cover ring-4 ring-eco-green/30 group-hover:ring-eco-green/50 transition-all duration-300"
-                      />
-                      <div className="absolute -top-1 -right-1 w-6 h-6 bg-eco-green rounded-full flex items-center justify-center">
-                        <CheckCircle className="h-4 w-4 text-white" />
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-white text-lg">{testimonial.name}</h4>
-                      <p className="text-gray-300 flex items-center">
-                        <MapPin className="h-4 w-4 mr-1" />
-                        {testimonial.location}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex space-x-1 mb-6">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-6 w-6 fill-solar-yellow text-solar-yellow" />
-                    ))}
-                  </div>
-                </CardHeader>
-                
-                <CardContent className="relative z-10">
-                  <p className="text-gray-300 leading-relaxed mb-6 text-lg group-hover:text-white transition-colors duration-300">
-                    "{testimonial.comment}"
-                  </p>
-                  
-                  <div className="glass-card p-6 bg-eco-green/10 border-eco-green/20">
-                    <div className="text-center">
-                      <div className="flex items-center justify-center space-x-3 mb-2">
-                        <span className="text-red-400 line-through font-bold text-xl">{testimonial.beforeBill}</span>
-                        <ArrowRight className="h-5 w-5 text-eco-green" />
-                        <span className="text-eco-green font-black text-2xl">{testimonial.afterBill}</span>
-                      </div>
-                      <p className="text-sm text-gray-300 font-semibold">Bil bulanan</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-40 left-20 w-80 h-80 bg-electric-blue/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-40 right-20 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="relative container mx-auto px-4">
-          <div className="text-center mb-20">
-            <Badge className="bg-gradient-to-r from-electric-blue/10 to-purple-500/10 text-electric-blue border-electric-blue/20 mb-6 px-6 py-3 text-lg font-bold">
-              FAQ
-            </Badge>
-            <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6">
-              Soalan <span className="bg-gradient-to-r from-electric-blue to-purple-600 bg-clip-text text-transparent">Lazim</span>
-            </h2>
-            <p className="text-2xl text-gray-600 font-semibold">Jawapan kepada soalan yang selalu ditanya</p>
+            <p className="text-2xl text-gray-600 font-semibold">Kami faham kerisauan anda. Mari kami jawab!</p>
           </div>
 
           <div className="max-w-4xl mx-auto">
             <Accordion type="single" collapsible className="space-y-6">
               {faqs.map((faq) => (
-                <AccordionItem key={faq.id} value={`item-${faq.id}`} className="glass-card border-none rounded-2xl overflow-hidden">
-                  <AccordionTrigger className="px-8 py-6 text-left text-xl font-bold text-gray-900 hover:text-electric-blue transition-colors duration-300 no-underline">
+                <AccordionItem key={faq.id} value={`item-${faq.id}`} className="bg-white border-none rounded-2xl shadow-lg overflow-hidden">
+                  <AccordionTrigger className="px-8 py-6 text-left text-xl font-bold text-gray-900 hover:text-green-600 transition-colors duration-300 no-underline">
                     <div className="flex items-center space-x-4">
-                      <div className="w-8 h-8 bg-gradient-to-r from-electric-blue to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                      <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
                         {faq.id}
                       </div>
                       <span>{faq.question}</span>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="px-8 pb-6 text-gray-700 leading-relaxed text-lg">
-                    <div className="pl-12">
+                    <div className="pl-14 bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl">
                       {faq.answer}
                     </div>
                   </AccordionContent>
@@ -509,185 +615,186 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Quote Form Section */}
-      <section className="py-24 bg-gradient-to-br from-solar-yellow/10 via-amber-50 to-orange-100/50 relative overflow-hidden">
+      {/* Final CTA - Urgency */}
+      <section className="py-20 bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-96 h-96 bg-solar-yellow/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-80 h-80 bg-eco-green/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-20 left-20 w-96 h-96 bg-yellow-400/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
         
         <div className="relative container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <Badge className="bg-gradient-to-r from-solar-yellow/20 to-amber-400/20 text-amber-800 border-amber-300 mb-6 px-6 py-3 text-lg font-bold">
-              <Zap className="h-5 w-5 mr-2" />
-              DAPATKAN SEBUT HARGA PERCUMA
-            </Badge>
-            <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6">
-              Mohon Sebut Harga dan <span className="bg-gradient-to-r from-solar-yellow to-amber-500 bg-clip-text text-transparent">Jimat Bil Elektrik</span> Anda Sekarang
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <h2 className="text-4xl lg:text-6xl font-black text-white mb-6">
+              Jangan <span className="text-yellow-400">Terlepas Peluang</span> Ini!
             </h2>
-            <p className="text-2xl text-gray-700 font-semibold">Isi maklumat anda dan dapatkan sebut harga percuma dalam 24 jam</p>
+            <p className="text-2xl text-white font-semibold">Dapatkan sebut harga PERCUMA dan mulakan penjimatan anda hari ini!</p>
+
+            <Card className="bg-white/10 backdrop-blur-md border-none shadow-3xl max-w-3xl mx-auto">
+              <CardContent className="p-12">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-3">
+                      <Label htmlFor="name" className="text-lg font-bold text-white">Nama Penuh *</Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleFormChange}
+                        required
+                        className="border-2 border-white/30 bg-white/20 text-white placeholder-white/70 focus:border-yellow-400 rounded-xl p-4 text-lg"
+                        placeholder="Masukkan nama penuh anda"
+                      />
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <Label htmlFor="phone" className="text-lg font-bold text-white">Nombor Telefon *</Label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleFormChange}
+                        required
+                        className="border-2 border-white/30 bg-white/20 text-white placeholder-white/70 focus:border-yellow-400 rounded-xl p-4 text-lg"
+                        placeholder="+60 123 456 789"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-3">
+                    <Label htmlFor="address" className="text-lg font-bold text-white">Alamat/Poskod *</Label>
+                    <Input
+                      id="address"
+                      name="address"
+                      value={formData.address}
+                      onChange={handleFormChange}
+                      required
+                      className="border-2 border-white/30 bg-white/20 text-white placeholder-white/70 focus:border-yellow-400 rounded-xl p-4 text-lg"
+                      placeholder="Alamat lengkap untuk lawatan percuma"
+                    />
+                  </div>
+
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full bg-gradient-to-r from-yellow-400 to-orange-400 hover:from-orange-400 hover:to-yellow-400 text-black font-black text-2xl py-6 rounded-2xl shadow-2xl hover:shadow-3xl hover:-translate-y-2 transition-all duration-300 animate-pulse"
+                  >
+                    <Zap className="h-8 w-8 mr-4" />
+                    DAPATKAN SEBUT HARGA PERCUMA + REBAT RM15K!
+                    <Gift className="h-8 w-8 ml-4" />
+                  </Button>
+                </form>
+
+                <div className="mt-8 text-center">
+                  <p className="text-white/80 text-sm">
+                    ✅ Tiada komitmen • ✅ Lawatan percuma • ✅ Sebut harga dalam 24 jam
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
-
-          <Card className="max-w-3xl mx-auto glass-card-premium border-none shadow-3xl">
-            <CardContent className="p-12">
-              <form onSubmit={handleSubmit} className="space-y-8">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-3">
-                    <Label htmlFor="name" className="text-lg font-bold text-gray-900">Nama Penuh *</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleFormChange}
-                      required
-                      className="border-2 border-gray-200 focus:border-solar-yellow rounded-xl p-4 text-lg transition-all duration-300"
-                      placeholder="Masukkan nama penuh anda"
-                    />
-                  </div>
-                  
-                  <div className="space-y-3">
-                    <Label htmlFor="phone" className="text-lg font-bold text-gray-900">Nombor Telefon *</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleFormChange}
-                      required
-                      className="border-2 border-gray-200 focus:border-solar-yellow rounded-xl p-4 text-lg transition-all duration-300"
-                      placeholder="+60 123 456 789"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <Label htmlFor="email" className="text-lg font-bold text-gray-900">Email</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleFormChange}
-                    className="border-2 border-gray-200 focus:border-solar-yellow rounded-xl p-4 text-lg transition-all duration-300"
-                    placeholder="nama@email.com"
-                  />
-                </div>
-
-                <div className="space-y-3">
-                  <Label htmlFor="address" className="text-lg font-bold text-gray-900">Alamat/Poskod *</Label>
-                  <Input
-                    id="address"
-                    name="address"
-                    value={formData.address}
-                    onChange={handleFormChange}
-                    required
-                    className="border-2 border-gray-200 focus:border-solar-yellow rounded-xl p-4 text-lg transition-all duration-300"
-                    placeholder="Alamat lengkap dan poskod"
-                  />
-                </div>
-
-                <div className="space-y-3">
-                  <Label htmlFor="message" className="text-lg font-bold text-gray-900">Mesej Tambahan</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleFormChange}
-                    rows={4}
-                    className="border-2 border-gray-200 focus:border-solar-yellow rounded-xl p-4 text-lg transition-all duration-300"
-                    placeholder="Beritahu kami tentang keperluan anda, jenis bumbung, atau soalan lain..."
-                  />
-                </div>
-
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="w-full bg-gradient-to-r from-solar-yellow to-amber-400 hover:from-amber-400 hover:to-solar-yellow text-black font-black text-2xl py-6 rounded-2xl shadow-2xl hover:shadow-3xl hover:-translate-y-2 transition-all duration-300"
-                >
-                  <Zap className="h-6 w-6 mr-3" />
-                  Hantar Permohonan Sebut Harga PERCUMA
-                  <Sparkles className="h-6 w-6 ml-3" />
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-64 h-64 bg-solar-yellow/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="relative container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-12">
-            <div className="space-y-6 md:col-span-2">
+      <footer className="bg-gray-900 text-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="space-y-6">
               <div className="flex items-center space-x-4">
-                <div className="relative">
-                  <Sun className="h-12 w-12 text-solar-yellow" />
-                  <div className="absolute inset-0 bg-solar-yellow/20 rounded-full blur-xl"></div>
+                <Sun className="h-12 w-12 text-yellow-400" />
+                <div>
+                  <h3 className="text-2xl font-black">Ai Brique</h3>
+                  <p className="text-gray-400">Solar Terpercaya #1</p>
                 </div>
-                <h3 className="text-4xl font-black">Ai Brique</h3>
-                <Badge className="bg-eco-green/20 text-eco-green border-eco-green/30">
-                  Terpercaya #1
-                </Badge>
               </div>
-              <p className="text-gray-300 leading-relaxed text-lg">
-                Pembekal panel solar terkemuka di Malaysia dengan 100+ pemasangan berjaya dan jaminan 25 tahun. 
-                Kami komited untuk membantu keluarga Malaysia menjimatkan kos elektrik dan menjaga alam sekitar.
+              <p className="text-gray-300 leading-relaxed">
+                Telah membantu 1000+ keluarga Malaysia menjimatkan lebih RM5 juta dalam bil elektrik. 
+                Kami komited untuk masa depan tenaga bersih Malaysia.
               </p>
               
               <div className="flex space-x-4">
-                <div className="glass-card-dark p-4 rounded-xl">
-                  <p className="text-2xl font-black text-eco-green">100+</p>
-                  <p className="text-sm text-gray-300">Projek Siap</p>
+                <div className="bg-green-600 p-3 rounded-lg text-center">
+                  <p className="text-2xl font-black">1000+</p>
+                  <p className="text-xs">Happy Families</p>
                 </div>
-                <div className="glass-card-dark p-4 rounded-xl">
-                  <p className="text-2xl font-black text-solar-yellow">25</p>
-                  <p className="text-sm text-gray-300">Tahun Jaminan</p>
+                <div className="bg-blue-600 p-3 rounded-lg text-center">
+                  <p className="text-2xl font-black">25</p>
+                  <p className="text-xs">Years Warranty</p>
                 </div>
-                <div className="glass-card-dark p-4 rounded-xl">
-                  <p className="text-2xl font-black text-electric-blue">70%</p>
-                  <p className="text-sm text-gray-300">Jimat Bil</p>
+                <div className="bg-yellow-600 p-3 rounded-lg text-center">
+                  <p className="text-2xl font-black">5.0</p>
+                  <p className="text-xs">Star Rating</p>
                 </div>
               </div>
             </div>
 
             <div>
-              <h4 className="text-xl font-bold mb-6 text-solar-yellow">Perkhidmatan</h4>
+              <h4 className="text-xl font-bold mb-6 text-yellow-400">Kenapa Pilih Kami?</h4>
               <ul className="space-y-3 text-gray-300">
-                <li className="hover:text-white transition-colors duration-200 cursor-pointer">• Pemasangan Panel Solar</li>
-                <li className="hover:text-white transition-colors duration-200 cursor-pointer">• Penyelenggaraan & Servis</li>
-                <li className="hover:text-white transition-colors duration-200 cursor-pointer">• Konsultasi Percuma</li>
-                <li className="hover:text-white transition-colors duration-200 cursor-pointer">• Jaminan & Waranti</li>
+                <li className="flex items-center">
+                  <CheckCircle className="h-4 w-4 text-green-400 mr-2" />
+                  100% Money Back Guarantee
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="h-4 w-4 text-green-400 mr-2" />
+                  Pemasangan Express 14 Hari
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="h-4 w-4 text-green-400 mr-2" />
+                  Jaminan 25 Tahun
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="h-4 w-4 text-green-400 mr-2" />
+                  Maintenance Percuma
+                </li>
               </ul>
             </div>
 
             <div>
-              <h4 className="text-xl font-bold mb-6 text-eco-green">Hubungi Kami</h4>
+              <h4 className="text-xl font-bold mb-6 text-green-400">Kawasan Liputan</h4>
+              <ul className="space-y-3 text-gray-300">
+                <li>• Kuala Lumpur & Selangor</li>
+                <li>• Johor & Melaka</li>
+                <li>• Penang & Kedah</li>
+                <li>• Perak & Negeri Sembilan</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-xl font-bold mb-6 text-red-400">Hubungi Sekarang!</h4>
               <div className="space-y-4 text-gray-300">
-                <div className="flex items-center space-x-3 group cursor-pointer">
-                  <Phone className="h-5 w-5 text-solar-yellow group-hover:scale-110 transition-transform duration-200" />
-                  <span className="group-hover:text-white transition-colors duration-200">+60 3-1234 5678</span>
+                <div className="flex items-center space-x-3">
+                  <Phone className="h-5 w-5 text-yellow-400" />
+                  <div>
+                    <p className="font-bold text-white">+60 3-1234 5678</p>
+                    <p className="text-sm">24/7 Hotline Percuma</p>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-3 group cursor-pointer">
-                  <Mail className="h-5 w-5 text-solar-yellow group-hover:scale-110 transition-transform duration-200" />
-                  <span className="group-hover:text-white transition-colors duration-200">info@aibrique.my</span>
+                <div className="flex items-center space-x-3">
+                  <Mail className="h-5 w-5 text-yellow-400" />
+                  <span>info@aibrique.my</span>
                 </div>
-                <div className="flex items-center space-x-3 group cursor-pointer">
-                  <MapPin className="h-5 w-5 text-solar-yellow group-hover:scale-110 transition-transform duration-200" />
-                  <span className="group-hover:text-white transition-colors duration-200">Kuala Lumpur, Malaysia</span>
+                <div className="flex items-center space-x-3">
+                  <MapPin className="h-5 w-5 text-yellow-400" />
+                  <span>Kuala Lumpur, Malaysia</span>
                 </div>
+              </div>
+
+              <div className="mt-6">
+                <Button className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 font-bold animate-pulse">
+                  <Phone className="h-4 w-4 mr-2" />
+                  CALL SEKARANG!
+                </Button>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between">
-            <p className="text-gray-400 text-center md:text-left">&copy; 2024 Ai Brique. Hak cipta terpelihara.</p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Badge className="bg-eco-green/20 text-eco-green border-eco-green/30">100% Mesra Alam</Badge>
-              <Badge className="bg-electric-blue/20 text-electric-blue border-electric-blue/30">Teknologi Terkini</Badge>
+          <div className="border-t border-gray-800 mt-12 pt-8 text-center">
+            <p className="text-gray-400">&copy; 2024 Ai Brique. Hak cipta terpelihara. | Lesen SEDA: ABC123456</p>
+            <div className="mt-4 flex justify-center space-x-6">
+              <Badge className="bg-green-600 text-white">✅ SEDA Approved</Badge>
+              <Badge className="bg-blue-600 text-white">🏆 ISO Certified</Badge>
+              <Badge className="bg-purple-600 text-white">⭐ 5-Star Rated</Badge>
             </div>
           </div>
         </div>
